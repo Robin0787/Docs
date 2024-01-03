@@ -38,7 +38,7 @@ const data: TCard[] = [
     fileSize: ".9mb",
     close: true,
     tagDetails: {
-      isOpen: true,
+      isOpen: false,
       tagTitle: "Download Now",
       tagColor: "green",
     },
@@ -73,28 +73,17 @@ const data: TCard[] = [
       tagColor: "green",
     },
   },
-  {
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-    fileSize: ".9mb",
-    close: false,
-    tagDetails: {
-      isOpen: true,
-      tagTitle: "Download Now",
-      tagColor: "blue",
-    },
-  },
 ];
 
 const Foreground = () => {
   const ref = useRef(null);
   return (
-    <div
-      ref={ref}
-      className="p-5 fixed top-0 left-0 z-[3] w-full h-full flex flex-wrap gap-10"
-    >
-      {data.map((item: TCard, index: number) => (
-        <Card key={index} item={item} reference={ref} />
-      ))}
+    <div className="p-5 fixed top-0 left-0 z-[3] w-full h-full ">
+      <div ref={ref} className="flex flex-wrap gap-10">
+        {data.map((item: TCard, index: number) => (
+          <Card key={index} item={item} reference={ref} />
+        ))}
+      </div>
     </div>
   );
 };
